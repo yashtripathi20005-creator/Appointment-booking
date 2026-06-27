@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Appointments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>📅 Appointment System</h1>
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/appointments" class="active">View Appointments</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Your Appointments</h2>
+            <div class="filters">
+                <input type="date" id="filterDate" placeholder="Filter by date">
+                <button id="clearFilter" class="btn btn-secondary">Clear Filter</button>
+                <button id="refreshAppointments" class="btn btn-primary">Refresh</button>
+            </div>
+        </section>
+
+        <section class="appointments-list">
+            <div id="appointmentsContainer">
+                <div class="loading">Loading appointments...</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
